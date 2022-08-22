@@ -33,7 +33,7 @@ public class Queue { //FIFO
         int info;
 
         if(this.isEmpty() == true){  // empty queue case
-            return 0;
+            return -1;
 
         } else if (this.front == this.back) { //size 1 queue case
 
@@ -59,13 +59,16 @@ public class Queue { //FIFO
     public void printIterate(){ //iteration method just for fun
         Node temp = this.front;
 
-        System.out.println(temp.getInfo());
+        System.out.println("Queue values are as follows:");
 
-        while(temp.getNext() != this.back){
+        System.out.println(temp.getInfo());
+        while(temp != this.back){
+
             temp.setNext(temp.getNext());
             temp = temp.getNext();
-            System.out.println(temp.getNext().getInfo());
-        }
+            System.out.println(temp.getInfo());
 
+        }
+        System.out.println();
     }
 }
